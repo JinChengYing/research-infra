@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torchdiffeq import odeint
-from core.registry.ODE import register_ode
+from core.registry.ode import register_ode
 
 class ODEFunc(nn.Module):
     def __init__(self, dim, hidden_dim):
