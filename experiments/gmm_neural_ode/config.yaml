@@ -1,0 +1,26 @@
+# experiments/gmm_neural_ode/config.yaml
+problem:
+  name: gmm_2d
+  params:
+    n_components: 3
+    dim: 2
+
+method:
+  name: neural_ode_trainer
+  params:
+    model:
+      name: neural_ode
+      params:
+        dim: 2
+        hidden_dim: 128
+        t0: 0.0
+        t1: 1.0
+        solver: dopri5
+    optimizer:
+      lr: 1e-3
+      weight_decay: 0.0
+    batch_size: 512
+    epochs: 1000
+
+loss:
+  name: gmm_MLE
